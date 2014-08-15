@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<style>
+
+body {
+  background-color: white;
+}
+
+.animation {
+  position:absolute;
+  left:0px;
+  top:0px;
+}
+
+#layer1 {
+  z-index: 1;
+}
+
+#options {
+  position: absolute;
+  top:300px;
+}
+
+</style>
+</head>
+<body>
+<canvas id="layer1" class="animation"></canvas>
+
+<div id="options">
+<select id="renderModeSelector" onchange="updateRenderMode();">
+  <option value="source-over">normal</option>
+  <option value="overlay">overlay</option>
+  <option value="screen">screen</option>
+  <option value="difference">difference</option>
+  <option value="multiply">multiply</option>
+  <option value="darken">darken</option>
+  <option value="lighten">lighten</option>
+  <option value="color-dodge">color-dodge</option>
+  <option value="color-burn">color-burn</option>
+  <option value="hard-light">hard-light</option>
+  <option value="soft-light">soft-light</option>
+  <option value="exclusion">exclusion</option>
+  <option value="hue">hue</option>
+  <option value="saturation">saturation</option>
+  <option value="color">color</option>
+  <option value="luminosity">luminosity</option>
+</select>
+
+  <br>
+  Pink speed: <input id="p_delta" type="number" name="p_delta" value="0.4"> <br>
+  Blue speed: <input id="b_delta" type="number" name="b_delta" value="0.2"><br>
+  Background Color: <input type="text" name="fname" value="white"><br>
+  <button type="button" onclick="requestAnimationFrame(step);">Update</button>
+
+</div>
+<script type="text/javascript">
+
+(function() {
+  var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+                              window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+  window.requestAnimationFrame = requestAnimationFrame;
+})();
+
+var canvas = document.getElementById("layer1");
+var ctx = canvas.getContext('2d');
+
+
+canvas.width = 400;
+canvas.height = 300;
+resizeCanvas();
+
+
+var pink_sine = new Image();
+pink_sine.src = "pink_sine.png";
+
+var blue_sine = new Image();
+blue_sine.src = "blue_sine.png"
+
+// 1000 is about the width of the sine image... this is a sketchy hack
+var numImages = Math.ceil(parseFloat(canvas.width) / 100) + 1;
+
+var b_offset = 0;
+var p_offset = 0;
+
+var p_delta = 3;
+var b_delta = 1;
+
+function step() {
+  ctx.clearRect (0, 0, canvas.width, canvas.height);
+  ctx.globalAlpha = 0.8;
+
+  if (pink_sine.width + p_offset < 0) {
+    p_offset = 0;
+  }
+
+  for (var i = 0; i < numImages; i++) {
+    ctx.drawImage(pink_sine, i * pink_sine.width + p_offset, 0);
+  }
+
+  if (-blue_sine.width + b_offset > 0) {
+    b_offset = 0;
+  }
+
+  //console.log(p_offset + ", " + b_offset + "..." + (pink_sine.width + p_offset) + ", " + (canvas.width + b_offset));
+
+  for (var i = numImages; i > 0; i--) {
+    ctx.drawImage(blue_sine, canvas.width - i * blue_sine.width + b_offset, 0);
+  }
+
+  b_offset += b_delta;
+  p_offset -= p_delta;
+
+  requestAnimationFrame(step);
+}
+
+function updateRenderMode() {
+  dropdown = document.getElementById("renderModeSelector");
+  ctx.globalCompositeOperation = dropdown.options[dropdown.selectedIndex].value;
+  console.log(dropdown.options[dropdown.selectedIndex].value);
+}
+
+updateRenderMode();
+
+function updateDeltas() {
+  console.log('updating');
+  p_delta = document.getElementById("p_delta").value;
+  b_delta = - document.getElementById("b_delta").value;
+}
+
+function changeBackgroundColor() {
+  document.body.style.backgroundColor = document.getElementById("backgroundColorForm").value;
+}
+
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  numImages = Math.ceil(parseFloat(canvas.width) / 1000) + 1;
+}
+
+// resize the canvas to fill browser window dynamically
+window.addEventListener('resize', resizeCanvas, false);
+
+
+requestAnimationFrame(step);
+
+</script>
+
+
+</body>
+</html>
