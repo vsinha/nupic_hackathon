@@ -1,3 +1,5 @@
+window.onload = function () {
+
 var canvas = document.getElementById("sine_animation_canvas");
 var ctx = canvas.getContext('2d');
 
@@ -24,7 +26,7 @@ var b_delta = 0.1;
 function step() {
   ctx.clearRect (0, 0, canvas.width, canvas.height);
   ctx.globalAlpha = 1;
-  ctx.globalCompositeOperation = "overlay";
+  ctx.globalCompositeOperation = "screen";
 
   // Pink sine wave moves leftwards
   if (pink_sine.width + p_offset < 0) {
@@ -70,3 +72,4 @@ window.addEventListener('resize', resizeCanvas, false);
 
 // Kick off the animation
 requestAnimationFrame(step);
+};

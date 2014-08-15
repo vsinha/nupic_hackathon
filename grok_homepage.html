@@ -1,0 +1,2172 @@
+<!DOCTYPE html>
+<!-- saved from url=(0062)https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script src="./grok_homepage_files/embedForm.js"></script><script src="./grok_homepage_files/ZeroClipboard.min.js"></script><script src="./grok_homepage_files/SHA1.js"></script><script src="./grok_homepage_files/Crypto.js"></script><script src="./grok_homepage_files/modalMetricList.js"></script><script src="./grok_homepage_files/bootstrap-switch.min.js"></script><script src="./grok_homepage_files/instanceList.js"></script><script src="./grok_homepage_files/FileSaver.min.js"></script><script src="./grok_homepage_files/Blob.min.js"></script><script src="./grok_homepage_files/jquery.tablesorter.min.js"></script><script src="./grok_homepage_files/manage.js"></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Manage Monitored Instances | Grok</title>
+        <link rel="shortcut icon" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/static/img/icon/favicon.ico?v=1.5.0">
+        <link rel="stylesheet" type="text/css" href="./grok_homepage_files/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="./grok_homepage_files/global.css">
+    <style type="text/css"></style><link href="./grok_homepage_files/manage.css" rel="stylesheet" type="text/css"><link href="./grok_homepage_files/jquery.tablesorter.theme.grok.css" rel="stylesheet" type="text/css"><link href="./grok_homepage_files/instanceList.css" rel="stylesheet" type="text/css"><link href="./grok_homepage_files/bootstrap-switch.min.css" rel="stylesheet" type="text/css"><link href="./grok_homepage_files/modalMetricList.css" rel="stylesheet" type="text/css"><link href="./grok_homepage_files/embedForm.css" rel="stylesheet" type="text/css"></head>
+    <script src="./grok_sine_animation.js"></script>
+    <body>
+        <!-- header -->
+        <header class="navbar navbar-inverse" style="height: 0px;">
+            <div id="animation_header" style="z-index: -1000; margin-top: 7px;">
+                <canvas id="sine_animation_canvas" class="animation"></canvas>
+            </div>
+            <div class="container" style="position: relative; top: -50px;">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/grok_homepage_files/Manage Monitored Instances   Grok.html" style="backround-image: 'Manage\ Monitored\ Instances\ \ \ Grok_files/static/img/logo-white.svg'">Grok</a>
+                </div>
+                <ul class="nav navbar-nav navbar-right" style="background-color:#262626;">
+                </ul>
+            </div>
+        </header>
+
+        <!-- main content -->
+        <div class="content-wrap">
+
+            <!-- flash message box -->
+            <div id="alert" class="alert alert-dismissable container off">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+                    ×
+                </button>
+                <span class="text"></span>
+            </div>
+
+            <!-- actual content -->
+            <section id="content" class="container"><div class="grok-manage grok-page row">
+    <div class="col-md-8 col-md-offset-2" style="margin-left:4px;">
+
+        <h1>Manage Monitored Instances</h1>
+
+        <div id="instance-list" style="opacity: 1;"><div class="grok-instance-list grok-panel">
+
+    <h3>Instances Currently Monitored by Grok</h3>
+
+    <form>
+
+        <table class="table tablesorter tablesorter-default" role="grid">
+
+            <colgroup>
+                <col>
+                <col span="3">
+                <col>
+            </colgroup>
+
+            <thead>
+                <tr class="tablesorter-headerRow" role="row">
+                    <th data-column="0" class="tablesorter-header tablesorter-headerUnSorted" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label="Instance: No sort applied, activate to apply an ascending sort" style="-webkit-user-select: none;"><div class="tablesorter-header-inner">Instance</div></th>
+                    <th data-column="1" class="tablesorter-header tablesorter-headerUnSorted" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label="Service: No sort applied, activate to apply an ascending sort" style="-webkit-user-select: none;"><div class="tablesorter-header-inner">Service</div></th>
+                    <th data-column="2" class="tablesorter-header tablesorter-headerUnSorted" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label="Region: No sort applied, activate to apply an ascending sort" style="-webkit-user-select: none;"><div class="tablesorter-header-inner">Region</div></th>
+                    <th data-column="3" class="tablesorter-header tablesorter-headerUnSorted" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label="Status: No sort applied, activate to apply an ascending sort" style="-webkit-user-select: none;"><div class="tablesorter-header-inner">Status</div></th>
+                    <th class="sorter-false text-center tablesorter-header tablesorter-headerUnSorted" data-column="4" tabindex="0" scope="col" role="columnheader" aria-disabled="true" unselectable="on" aria-sort="none" style="-webkit-user-select: none;"><div class="tablesorter-header-inner">Remove</div></th>
+                </tr>
+            </thead>
+
+
+                <tbody class="instances" aria-live="polite" aria-relevant="all">
+
+                        <tr data-name="stocks.AAL.VOLUME" data-instance="stocks.AAL.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.AAL.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.AAPL.VOLUME" data-instance="stocks.AAPL.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.AAPL.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.AMG.VOLUME" data-instance="stocks.AMG.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.AMG.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.AMZN.VOLUME" data-instance="stocks.AMZN.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.AMZN.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.ANIK.VOLUME" data-instance="stocks.ANIK.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.ANIK.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.AXP.VOLUME" data-instance="stocks.AXP.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.AXP.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.BAS.VOLUME" data-instance="stocks.BAS.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.BAS.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.BIND.VOLUME" data-instance="stocks.BIND.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.BIND.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.BRX.VOLUME" data-instance="stocks.BRX.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.BRX.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.BTUI.VOLUME" data-instance="stocks.BTUI.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.BTUI.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.CARO.VOLUME" data-instance="stocks.CARO.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.CARO.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Pending
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.CBAK.VOLUME" data-instance="stocks.CBAK.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.CBAK.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.CBM.VOLUME" data-instance="stocks.CBM.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.CBM.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.CCRN.VOLUME" data-instance="stocks.CCRN.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.CCRN.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.CLF.VOLUME" data-instance="stocks.CLF.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.CLF.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.COO.VOLUME" data-instance="stocks.COO.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.COO.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.CSCO.VOLUME" data-instance="stocks.CSCO.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.CSCO.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.DDD.VOLUME" data-instance="stocks.DDD.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.DDD.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.DRL.VOLUME" data-instance="stocks.DRL.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.DRL.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.DTV.VOLUME" data-instance="stocks.DTV.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.DTV.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.DUST.VOLUME" data-instance="stocks.DUST.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.DUST.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.DVA.VOLUME" data-instance="stocks.DVA.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.DVA.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.EDMC.VOLUME" data-instance="stocks.EDMC.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.EDMC.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.ENZ.VOLUME" data-instance="stocks.ENZ.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.ENZ.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.ESI.VOLUME" data-instance="stocks.ESI.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.ESI.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.EVRY.VOLUME" data-instance="stocks.EVRY.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.EVRY.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.FB.VOLUME" data-instance="stocks.FB.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.FB.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.FNF.VOLUME" data-instance="stocks.FNF.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.FNF.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.FWM.VOLUME" data-instance="stocks.FWM.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.FWM.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.GHC.VOLUME" data-instance="stocks.GHC.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.GHC.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.GNI.VOLUME" data-instance="stocks.GNI.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.GNI.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.GPRO.VOLUME" data-instance="stocks.GPRO.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.GPRO.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.GS.VOLUME" data-instance="stocks.GS.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.GS.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.HWAY.VOLUME" data-instance="stocks.HWAY.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.HWAY.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.IBM.VOLUME" data-instance="stocks.IBM.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.IBM.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.ICLD.VOLUME" data-instance="stocks.ICLD.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.ICLD.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.IRM.VOLUME" data-instance="stocks.IRM.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.IRM.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.JDST.VOLUME" data-instance="stocks.JDST.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.JDST.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.KIPS.VOLUME" data-instance="stocks.KIPS.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.KIPS.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.KO.VOLUME" data-instance="stocks.KO.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.KO.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.KONE.VOLUME" data-instance="stocks.KONE.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.KONE.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.LAZ.VOLUME" data-instance="stocks.LAZ.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.LAZ.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.LMOS.VOLUME" data-instance="stocks.LMOS.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.LMOS.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.LOAN.VOLUME" data-instance="stocks.LOAN.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.LOAN.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.LOJN.VOLUME" data-instance="stocks.LOJN.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.LOJN.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.MCO.VOLUME" data-instance="stocks.MCO.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.MCO.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.MEI.VOLUME" data-instance="stocks.MEI.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.MEI.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.MELA.VOLUME" data-instance="stocks.MELA.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.MELA.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.MLM.VOLUME" data-instance="stocks.MLM.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.MLM.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.MNKD.VOLUME" data-instance="stocks.MNKD.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.MNKD.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.MSFT.VOLUME" data-instance="stocks.MSFT.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.MSFT.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.MU.VOLUME" data-instance="stocks.MU.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.MU.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.NBR.VOLUME" data-instance="stocks.NBR.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.NBR.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.NEWL.VOLUME" data-instance="stocks.NEWL.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.NEWL.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.NFX.VOLUME" data-instance="stocks.NFX.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.NFX.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.NOG.VOLUME" data-instance="stocks.NOG.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.NOG.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.NQ.VOLUME" data-instance="stocks.NQ.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.NQ.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.OSIS.VOLUME" data-instance="stocks.OSIS.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.OSIS.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.PCTI.VOLUME" data-instance="stocks.PCTI.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.PCTI.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.PDCE.VOLUME" data-instance="stocks.PDCE.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.PDCE.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.PENX.VOLUME" data-instance="stocks.PENX.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.PENX.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.PG.VOLUME" data-instance="stocks.PG.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.PG.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.PKE.VOLUME" data-instance="stocks.PKE.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.PKE.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.PQ.VOLUME" data-instance="stocks.PQ.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.PQ.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.PVA.VOLUME" data-instance="stocks.PVA.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.PVA.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.QCOR.VOLUME" data-instance="stocks.QCOR.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.QCOR.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.QQQ.VOLUME" data-instance="stocks.QQQ.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.QQQ.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.RBCN.VOLUME" data-instance="stocks.RBCN.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.RBCN.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.REGN.VOLUME" data-instance="stocks.REGN.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.REGN.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.RFMD.VOLUME" data-instance="stocks.RFMD.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.RFMD.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.RGDO.VOLUME" data-instance="stocks.RGDO.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.RGDO.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.RGSE.VOLUME" data-instance="stocks.RGSE.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.RGSE.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.RSYS.VOLUME" data-instance="stocks.RSYS.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.RSYS.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.RYN.VOLUME" data-instance="stocks.RYN.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.RYN.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.SHLD.VOLUME" data-instance="stocks.SHLD.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.SHLD.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.SIRI.VOLUME" data-instance="stocks.SIRI.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.SIRI.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.SLXP.VOLUME" data-instance="stocks.SLXP.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.SLXP.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.SMSI.VOLUME" data-instance="stocks.SMSI.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.SMSI.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.SNV.VOLUME" data-instance="stocks.SNV.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.SNV.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.SPPR.VOLUME" data-instance="stocks.SPPR.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.SPPR.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.SUNE.VOLUME" data-instance="stocks.SUNE.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.SUNE.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.SYNA.VOLUME" data-instance="stocks.SYNA.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.SYNA.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.TKMR.VOLUME" data-instance="stocks.TKMR.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.TKMR.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.TQNT.VOLUME" data-instance="stocks.TQNT.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.TQNT.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.TUES.VOLUME" data-instance="stocks.TUES.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.TUES.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.USB.VOLUME" data-instance="stocks.USB.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.USB.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.USG.VOLUME" data-instance="stocks.USG.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.USG.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.USU.VOLUME" data-instance="stocks.USU.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.USU.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.UVXY.VOLUME" data-instance="stocks.UVXY.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.UVXY.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.VBFC.VOLUME" data-instance="stocks.VBFC.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.VBFC.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Pending
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.VRS.VOLUME" data-instance="stocks.VRS.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.VRS.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.WFC.VOLUME" data-instance="stocks.WFC.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.WFC.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.WLT.VOLUME" data-instance="stocks.WLT.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.WLT.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.WMT.VOLUME" data-instance="stocks.WMT.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.WMT.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.X.VOLUME" data-instance="stocks.X.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.X.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-name="stocks.XOM.VOLUME" data-instance="stocks.XOM.VOLUME" data-namespace="Custom Grok" data-region="Grok">
+                            <td class="truncate">
+                                <a class="metric-link" href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok#">stocks.XOM.VOLUME</a>
+                            </td>
+                            <td class="truncate">Custom Grok</td>
+                            <td class="truncate">Grok</td>
+                            <td>
+
+                                Active
+
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    ×
+                                </button>
+                            </td>
+                        </tr>
+
+                </tbody>
+
+
+        </table>
+
+
+            <div class="text-right">
+                <button type="button" class="export btn btn-default">
+                    Export All
+                </button>
+                <button type="button" class="delete btn btn-default">
+                    Remove All
+                </button>
+            </div>
+
+
+    </form>
+
+</div>
+</div>
+
+        <div class="button">
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                    Monitor Additional Instances <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu pull-right" role="menu">
+                    <li><a href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok/instances/manual">Browse Instances</a></li>
+                    <li><a href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok/instances/auto">Search for Instances by Name Tag</a></li>
+                    <li><a href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok/instances/import">Import Selections</a></li>
+                    <li><a href="https://ec2-54-212-144-76.us-west-2.compute.amazonaws.com/grok/instances/autostack">Select Autostacks</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="embed-form"><div class="grok-embed-form grok-panel well">
+
+    <h3>Add Grok to Any Web Page</h3>
+
+    <p>To place a Grok Charts dashboard widget on your web page:</p>
+    <ul>
+
+            <li>Enter the hostname where you will embed the widget, and the width and height.</li>
+
+            <li>Copy the Embed Code, and place it in the HTML source code of your website.</li>
+
+    </ul>
+
+    <form id="form" class="form-horizontal">
+        <fieldset>
+            <div class="form-group">
+                <label for="domain" class="control-label col-sm-4">Destination Hostname</label>
+                <div class="col-sm-8">
+                    <input id="domain" name="domain" class="form-control" type="text" pattern="^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$|^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9])$" placeholder="example.com" required="">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="width" class="control-label col-sm-4">Width</label>
+                <div class="col-sm-8">
+                    <input id="width" min="540" type="number" step="1" name="width" class="form-control" value="720" required="">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="height" class="control-label col-sm-4">Height</label>
+                <div class="col-sm-8">
+                    <input id="height" min="200" type="number" step="1" name="height" class="form-control" value="480" required="">
+                </div>
+            </div>
+        </fieldset>
+        <div class="form-group">
+            <div class="col-sm-12">
+                <label for="code" class="control-label code">Embed Code</label>
+                <textarea id="code" name="code" class="form-control" rows="4" type="text" disabled="disabled"></textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-4">
+                <button id="copy" data-clipboard-target="code" type="submit" class="btn  btn-primary btn-copy" disabled="disabled">
+                    Copy Code to Clipboard
+                </button>
+            </div>
+            <div class="col-sm-8">
+                <label id="copied" class="copied">Code copied to clipboard.</label>
+            </div>
+        </div>
+    </form>
+
+</div>
+</div>
+
+    </div>
+</div>
+</section>
+
+        </div>
+
+        <!-- full screen loading indicator throbbing animation -->
+        <div class="loading-throbber off">
+            <img src="./grok_homepage_files/mark.svg" alt="Grok">
+            <div><span class="off"><!-- message --></span></div>
+        </div>
+
+        <!-- footer -->
+        <footer>
+            <div class="container text-muted text-center">
+                <ul class="list-inline">
+                    <li><a href="http://bit.ly/1kNgdF7" target="_blank">About</a></li>
+                    <li><a href="http://bit.ly/1iCg5DG" target="_blank">Help</a></li>
+                    <li>
+                        © 2014
+                        <a href="http://bit.ly/1kNgdF7" target="_blank">Numenta</a>
+                    </li>
+                </ul>
+                <ul class="list-inline">
+                    <li>Version 1.5.0</li>
+                    <li>Build 5b2bd40</li>
+                </ul>
+            </div>
+        </footer>
+
+        <!-- libs -->
+        <script src="./grok_homepage_files/jquery.min.js"></script>
+        <script src="./grok_homepage_files/underscore.min.js"></script>
+        <script src="./grok_homepage_files/backbone.min.js"></script>
+        <script src="./grok_homepage_files/LAB.min.js"></script>
+        <script src="./grok_homepage_files/bootstrap.min.js"></script>
+        <script src="./grok_homepage_files/bootbox.min.js"></script>
+        <!-- Grok Init -->
+        <script src="./grok_homepage_files/nta.js"></script>
+        <script>
+            window.GROKUI = {
+                _apiEndpoint: "",
+                embed: {
+                    height: "480",
+                    width:  "720"
+                },
+                hostname: "ip-10-213-144-159",
+                instanceData: {
+                    region: "us-west-2"
+                },
+                msgs: {},
+                product: {
+                    version:    "1.5.0",
+                    build:      "5b2bd40"
+                }
+            };
+            NTA.baseUrl = "";
+        </script>
+        <!-- Grok API -->
+        <script src="./grok_homepage_files/GrokAPI.js"></script>
+        <!-- Backbone.Model(s) -->
+        <script src="./grok_homepage_files/awsMetric.js"></script>
+        <script src="./grok_homepage_files/awsNamespace.js"></script>
+        <script src="./grok_homepage_files/awsRegion.js"></script>
+        <script src="./grok_homepage_files/grokAutostack.js"></script>
+        <script src="./grok_homepage_files/grokCustomMetric.js"></script>
+        <script src="./grok_homepage_files/instance.js"></script>
+        <script src="./grok_homepage_files/model.js"></script>
+        <script src="./grok_homepage_files/modelData.js"></script>
+        <script src="./grok_homepage_files/modelExport.js"></script>
+        <!-- Backbone.Collection(s) -->
+        <script src="./grok_homepage_files/awsMetrics.js"></script>
+        <script src="./grok_homepage_files/awsNamespaces.js"></script>
+        <script src="./grok_homepage_files/awsRegions.js"></script>
+        <script src="./grok_homepage_files/grokAutostacks.js"></script>
+        <script src="./grok_homepage_files/grokCustomMetrics.js"></script>
+        <script src="./grok_homepage_files/instances.js"></script>
+        <script src="./grok_homepage_files/models.js"></script>
+        <script src="./grok_homepage_files/modelExports.js"></script>
+        <!-- Grok Web UI -->
+        <script src="./grok_homepage_files/utils.js"></script>
+        <script src="./grok_homepage_files/loader.js"></script>
+        <script src="./grok_homepage_files/grok-routes.js"></script>
+        <script src="./grok_homepage_files/router.js"></script>
+        <script src="./grok_homepage_files/global.js"></script>
+
+
+<img src="./grok_homepage_files/mark(1).svg" class="off"><script type="text/template" id="manage-tmpl"><div class="grok-manage grok-page row">
+    <div class="col-md-8 col-md-offset-2">
+
+        <h1><%= msgs.title %></h1>
+
+        <div id="instance-list"></div>
+
+        <div class="button">
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                    <%= msgs.button %> <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu pull-right" role="menu">
+                    <li><a href="<%= site.paths['instances-manual'] %>"><%= site.nav.setup.method.manual %></a></li>
+                    <li><a href="<%= site.paths['instances-auto'] %>"><%= site.nav.setup.method.auto %></a></li>
+                    <li><a href="<%= site.paths['instances-import'] %>"><%= site.nav.setup.method.import %></a></li>
+                    <li><a href="<%= site.paths['autostack'] %>"><%= site.nav.setup.method.autostack %></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="embed-form"></div>
+
+    </div>
+</div>
+</script><script type="text/template" id="instance-list-tmpl"><div class="grok-instance-list grok-panel">
+
+    <h3><%= msgs.title %></h3>
+
+    <form>
+
+        <table class="table tablesorter">
+
+            <colgroup>
+                <col />
+                <col span="3" />
+                <col />
+            </colgroup>
+
+            <thead>
+                <tr>
+                    <th><%= msgs.table.headers.instance %></th>
+                    <th><%= msgs.table.headers.namespace %></th>
+                    <th><%= msgs.table.headers.region %></th>
+                    <th><%= msgs.table.headers.status %></th>
+                    <th class="sorter-false text-center"><%= msgs.table.headers.remove %></th>
+                </tr>
+            </thead>
+
+            <% if(instances.length > 0) { %>
+                <tbody class="instances">
+                    <% instances.forEach(function(instance) { %>
+                        <tr data-name="<%= instance.get('display') %>" data-instance="<%= instance.get('server') %>" data-namespace="<%= instance.get('namespace') %>" data-region="<%= instance.get('location') %>">
+                            <td class="truncate">
+                                <a class="metric-link" href="#"><%= instance.get('display') %></a>
+                            </td>
+                            <td class="truncate"><%= instance.get('namespace') %></td>
+                            <td class="truncate"><%= instance.get('location') %></td>
+                            <td>
+                                <% if(instance.get('message')) { %>
+                                    <abbr title="<%= instance.get('message') %>" class="text-danger">
+                                <% } %>
+                                <%= instance.get('statusName') %>
+                                <% if(instance.get('message')) { %></abbr><% } %>
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="close">
+                                    <%= site.icons.close %>
+                                </button>
+                            </td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            <% } else { %>
+                <tbody class="avoid-sort">
+                    <tr>
+                        <td class="text-muted" colspan="5"><%= msgs.table.empty %></td>
+                    </tr>
+                </tbody>
+            <% } %>
+
+        </table>
+
+        <% if(instances.length > 0) { %>
+            <div class="text-right">
+                <button type="button" class="export btn btn-default">
+                    <%= site.buttons.export %>
+                </button>
+                <button type="button" class="delete btn btn-default">
+                    <%= site.buttons.removeAll %>
+                </button>
+            </div>
+        <% } %>
+
+    </form>
+
+</div>
+</script><script type="text/template" id="modal-metric-list-tmpl"><div class="grok-modal-metric-list grok-panel">
+    <p>
+        <% if(autostackData.length > 0) { %>
+            <%= msgs.autostackLead %>
+        <% } else { %>
+            <%= msgs.instanceLead %>
+        <% } %>
+    </p>
+
+    <code class="truncate">
+        <%= region %>
+        <span class="text-muted">&gt;</span>
+        <%= namespace %>
+        <span class="text-muted">&gt;</span>
+        <%= display %>
+    </code>
+
+    <div class="text-muted"><%= msgs.note %></div>
+
+    <ol>
+        <% Object.keys(metrics).sort().forEach(function(metric) { %>
+            <li class="row">
+                <div class="col-sm-3">
+                    <input id="metric-<%= metric %>" type="checkbox"<% if(metrics[metric]) { %> checked="checked"<% } %> data-metric="<%= metric %>" />
+                </div>
+                <label for="metric-<%= metric %>" class="col-sm-9">
+                    <%= metric %>
+                </label>
+            </li>
+        <% }); %>
+        <% if(autostackData.length > 0) { %>
+            <h3><%= msgs.autostack.title %></h3>
+            <dl>
+                <dt><%= msgs.autostack.name %></dt>
+                    <dd><%= autostackData.name %></dd>
+                <dt><%= msgs.autostack.region %></dt>
+                    <dd><%= autostackData.region %></dd>
+                <dt><%= msgs.autostack.filters %></dt>
+                    <dd><%= autostackData.filters %></dd>
+                <dt><%= msgs.autostack.numMembers %></dt>
+                    <dd><%= autostackData.members.length %></dd>
+                <dt><%= msgs.autostack.members %></dt>
+                    <dd><%= autostackData.members.join("<br/>") %></dd>
+            </dl>
+        <% } %>
+    </ol>
+</div>
+</script><script type="text/template" id="embed-form-tmpl"><div class="grok-embed-form grok-panel well">
+
+    <h3><%= msgs.title %></h3>
+
+    <p><%= msgs.subtitle %></p>
+    <ul>
+        <% msgs.notes.forEach(function(note) { %>
+            <li><%= note %></li>
+        <% }); %>
+    </ul>
+
+    <form id="form" class="form-horizontal">
+        <fieldset>
+            <div class="form-group">
+                <label for="domain" class="control-label col-sm-4"><%= msgs.form.labels.domain %></label>
+                <div class="col-sm-8">
+                    <input id="domain" name="domain" class="form-control" type="text" pattern="^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$|^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9])$" placeholder="<%= msgs.form.defaults.domain %>" required />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="width" class="control-label col-sm-4"><%= msgs.form.labels.width %></label>
+                <div class="col-sm-8">
+                    <input id="width" min="540" type="number" step="1" name="width" class="form-control" type="text" value="<%= msgs.form.defaults.width %>" required />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="height" class="control-label col-sm-4"><%= msgs.form.labels.height %></label>
+                <div class="col-sm-8">
+                    <input id="height" min="200" type="number" step="1" name="height" class="form-control" type="text" value="<%= msgs.form.defaults.height %>" required/>
+                </div>
+            </div>
+        </fieldset>
+        <div class="form-group">
+            <div class="col-sm-12">
+                <label for="code" class="control-label code"><%= msgs.form.labels.code %></label>
+                <textarea id="code" name="code" class="form-control" rows="4" type="text" disabled="disabled"></textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-4">
+                <button id="copy" data-clipboard-target="code" type="submit" class="btn  btn-primary btn-copy">
+                    <%= msgs.form.buttons.copy %>
+                </button>
+            </div>
+            <div class="col-sm-8">
+                <label id="copied" class="copied"><%= msgs.form.labels.copied %></label>
+            </div>
+        </div>
+    </form>
+
+</div>
+
+<div id="global-zeroclipboard-html-bridge" class="global-zeroclipboard-container" style="position: absolute; left: 0px; top: -9999px; width: 15px; height: 15px; z-index: 999999999;">      <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" id="global-zeroclipboard-flash-bridge" width="100%" height="100%">         <param name="movie" value="/static/bower_components/zeroclipboard/ZeroClipboard.swf?noCache=1407516460303">         <param name="allowScriptAccess" value="sameDomain">         <param name="scale" value="exactfit">         <param name="loop" value="false">         <param name="menu" value="false">         <param name="quality" value="best">         <param name="bgcolor" value="#ffffff">         <param name="wmode" value="transparent">         <param name="flashvars" value="trustedOrigins=ec2-54-212-144-76.us-west-2.compute.amazonaws.com%2C%2F%2Fec2-54-212-144-76.us-west-2.compute.amazonaws.com%2Chttps%3A%2F%2Fec2-54-212-144-76.us-west-2.compute.amazonaws.com">         <embed src="/static/bower_components/zeroclipboard/ZeroClipboard.swf?noCache=1407516460303" loop="false" menu="false" quality="best" bgcolor="#ffffff" width="100%" height="100%" name="global-zeroclipboard-flash-bridge" allowscriptaccess="sameDomain" allowfullscreen="false" type="application/x-shockwave-flash" wmode="transparent" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="trustedOrigins=ec2-54-212-144-76.us-west-2.compute.amazonaws.com%2C%2F%2Fec2-54-212-144-76.us-west-2.compute.amazonaws.com%2Chttps%3A%2F%2Fec2-54-212-144-76.us-west-2.compute.amazonaws.com" scale="exactfit">                </object></div><script id="hiddenlpsubmitdiv" style="display: none;"></script><script>try{for(var lastpass_iter=0; lastpass_iter < document.forms.length; lastpass_iter++){ var lastpass_f = document.forms[lastpass_iter]; if(typeof(lastpass_f.lpsubmitorig2)=="undefined"){ lastpass_f.lpsubmitorig2 = lastpass_f.submit; lastpass_f.submit = function(){ var form=this; var customEvent = document.createEvent("Event"); customEvent.initEvent("lpCustomEvent", true, true); var d = document.getElementById("hiddenlpsubmitdiv"); if (d) {for(var i = 0; i < document.forms.length; i++){ if(document.forms[i]==form){ d.innerText=i; } } d.dispatchEvent(customEvent); }form.lpsubmitorig2(); } } }}catch(e){}</script></body></html>
